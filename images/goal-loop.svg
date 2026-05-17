@@ -1,0 +1,218 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="1200" height="420">
+  <defs>
+    <style>
+      .node { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+      .node-label { font-size: 15px; font-weight: 600; fill: #1a1a2e; text-anchor: middle; dominant-baseline: central; }
+      .node-sublabel { font-size: 11px; font-weight: 400; fill: #667085; text-anchor: middle; dominant-baseline: central; }
+      .title-text { font-family: -apple-system, BlinkMacSystemFont, sans-serif; font-size: 20px; font-weight: 700; fill: #1a1a2e; text-anchor: middle; }
+      .arrow-label { font-family: -apple-system, BlinkMacSystemFont, sans-serif; font-size: 11px; font-weight: 600; text-anchor: middle; dominant-baseline: central; }
+      .legend-text { font-family: -apple-system, BlinkMacSystemFont, sans-serif; font-size: 12px; font-weight: 400; fill: #667085; }
+
+      /* Entrance animation */
+      .node-group { opacity: 0; animation: fadeInUp 0.6s ease-out forwards; }
+
+      @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(12px); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+
+      /* Ambient float */
+      @keyframes floatA {
+        0%, 100% { transform: translateY(0); }
+        50%      { transform: translateY(-3px); }
+      }
+      @keyframes floatB {
+        0%, 100% { transform: translateY(0); }
+        50%      { transform: translateY(-4px); }
+      }
+
+      /* Connector entrance */
+      .connector { opacity: 0; animation: fadeIn 0.4s ease-out forwards; }
+
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+      }
+
+      /* Loop pulse */
+      .loop-path {
+        stroke-dasharray: 6 4;
+        animation: dashFlow 1.2s linear infinite;
+      }
+      @keyframes dashFlow {
+        to { stroke-dashoffset: -20; }
+      }
+    </style>
+
+    <!-- Arrowhead markers -->
+    <marker id="arrow-gray" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#98a2b3"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#27ae60"/>
+    </marker>
+    <marker id="arrow-red" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#e05252"/>
+    </marker>
+
+    <!-- Drop shadow -->
+    <filter id="shadow" x="-4%" y="-4%" width="108%" height="116%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.08"/>
+    </filter>
+    <filter id="shadow-emphasis" x="-4%" y="-4%" width="108%" height="116%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="420" fill="#ffffff" rx="8"/>
+
+  <!-- Title -->
+  <text x="600" y="38" class="title-text">Goal Skill — Workflow Loop</text>
+  <line x1="480" y1="50" x2="720" y2="50" stroke="#e0e0e0" stroke-width="1"/>
+
+  <!-- ==================== CONNECTORS ==================== -->
+
+  <!-- Connector 1: User → Interview -->
+  <g class="connector" style="animation-delay:0.4s">
+    <line x1="150" y1="180" x2="197" y2="180" stroke="#98a2b3" stroke-width="1.5" marker-end="url(#arrow-gray)"/>
+  </g>
+
+  <!-- Connector 2: Interview → goal.md -->
+  <g class="connector" style="animation-delay:0.6s">
+    <line x1="338" y1="180" x2="382" y2="180" stroke="#98a2b3" stroke-width="1.5" marker-end="url(#arrow-gray)"/>
+  </g>
+
+  <!-- Connector 3: goal.md → Builder -->
+  <g class="connector" style="animation-delay:0.8s">
+    <line x1="498" y1="180" x2="565" y2="180" stroke="#98a2b3" stroke-width="1.5" marker-end="url(#arrow-gray)"/>
+  </g>
+
+  <!-- Connector 4: Builder → Inspector -->
+  <g class="connector" style="animation-delay:1.0s">
+    <line x1="695" y1="180" x2="752" y2="180" stroke="#98a2b3" stroke-width="1.5" marker-end="url(#arrow-gray)"/>
+  </g>
+
+  <!-- Connector 5: Inspector → Summary (PASS) -->
+  <g class="connector" style="animation-delay:1.2s">
+    <line x1="888" y1="180" x2="945" y2="180" stroke="#27ae60" stroke-width="2" marker-end="url(#arrow-green)"/>
+    <text x="916" y="168" class="arrow-label" fill="#27ae60">PASS</text>
+  </g>
+
+  <!-- Loop: Inspector → Builder (FAIL) -->
+  <g class="connector" style="animation-delay:1.4s">
+    <path d="M 820,210 C 820,290 630,290 630,210"
+          fill="none" stroke="#e05252" stroke-width="2"
+          marker-end="url(#arrow-red)" class="loop-path"/>
+    <text x="725" y="298" class="arrow-label" fill="#e05252">FAIL — rework</text>
+  </g>
+
+  <!-- ==================== NODES ==================== -->
+
+  <!-- Node 1: User -->
+  <g class="node-group" style="animation-delay:0.1s">
+    <g class="node" filter="url(#shadow)">
+      <rect x="50" y="155" width="100" height="50" rx="25" ry="25"
+            fill="#f0f4f8" stroke="#b0bec5" stroke-width="1.5"/>
+      <text x="100" y="180" class="node-label">User</text>
+    </g>
+  </g>
+
+  <!-- Node 2: Interview -->
+  <g class="node-group" style="animation-delay:0.3s">
+    <g class="node" filter="url(#shadow)">
+      <rect x="205" y="155" width="130" height="50" rx="10"
+            fill="#f0faf0" stroke="#81c784" stroke-width="1.5"/>
+      <text x="270" y="175" class="node-label">Interview</text>
+      <text x="270" y="192" class="node-sublabel">relentless interview</text>
+    </g>
+  </g>
+
+  <!-- Node 3: goal.md -->
+  <g class="node-group" style="animation-delay:0.5s">
+    <g class="node" filter="url(#shadow)">
+      <rect x="385" y="155" width="110" height="50" rx="6"
+            fill="#fef9e7" stroke="#f0c040" stroke-width="1.5"/>
+      <!-- Document fold -->
+      <path d="M475,155 L475,167 L487,155 Z" fill="#f0c040" opacity="0.3"/>
+      <text x="440" y="180" class="node-label">goal.md</text>
+    </g>
+  </g>
+
+  <!-- Node 4: Builder (emphasized) -->
+  <g class="node-group" style="animation-delay:0.7s">
+    <g class="node" filter="url(#shadow-emphasis)">
+      <rect x="570" y="152" width="120" height="56" rx="10"
+            fill="#e8f0fe" stroke="#4285f4" stroke-width="2"/>
+      <text x="630" y="174" class="node-label" fill="#1a56db">Builder</text>
+      <text x="630" y="194" class="node-sublabel">Sonnet 4.6</text>
+    </g>
+  </g>
+
+  <!-- Node 5: Inspector (emphasized) -->
+  <g class="node-group" style="animation-delay:0.9s">
+    <g class="node" filter="url(#shadow-emphasis)">
+      <rect x="755" y="152" width="130" height="56" rx="10"
+            fill="#fef3e8" stroke="#e8890c" stroke-width="2"/>
+      <text x="820" y="174" class="node-label" fill="#b45309">Inspector</text>
+      <text x="820" y="194" class="node-sublabel">Haiku 4.5</text>
+    </g>
+  </g>
+
+  <!-- Node 6: Summary -->
+  <g class="node-group" style="animation-delay:1.1s">
+    <g class="node" filter="url(#shadow)">
+      <rect x="950" y="155" width="120" height="50" rx="10"
+            fill="#f0faf0" stroke="#81c784" stroke-width="1.5"/>
+      <text x="1010" y="175" class="node-label">Summary</text>
+      <text x="1010" y="192" class="node-sublabel">+ squash</text>
+    </g>
+  </g>
+
+  <!-- ==================== FLOW DOTS ==================== -->
+
+  <!-- Dot: User → Interview -->
+  <circle r="2" fill="#4285f4" opacity="0.6">
+    <animateMotion dur="1.2s" repeatCount="indefinite" path="M150,180 L197,180"/>
+  </circle>
+
+  <!-- Dot: Interview → goal.md -->
+  <circle r="2" fill="#4285f4" opacity="0.6">
+    <animateMotion dur="1.2s" repeatCount="indefinite" begin="0.2s" path="M338,180 L382,180"/>
+  </circle>
+
+  <!-- Dot: goal.md → Builder -->
+  <circle r="2" fill="#4285f4" opacity="0.6">
+    <animateMotion dur="1.2s" repeatCount="indefinite" begin="0.4s" path="M498,180 L565,180"/>
+  </circle>
+
+  <!-- Dot: Builder → Inspector -->
+  <circle r="2" fill="#4285f4" opacity="0.6">
+    <animateMotion dur="1.2s" repeatCount="indefinite" begin="0.6s" path="M695,180 L752,180"/>
+  </circle>
+
+  <!-- Dot: Inspector → Summary (PASS) -->
+  <circle r="2" fill="#27ae60" opacity="0.6">
+    <animateMotion dur="1.2s" repeatCount="indefinite" begin="0.8s" path="M888,180 L945,180"/>
+  </circle>
+
+  <!-- Dot: Inspector → Builder (FAIL loop) -->
+  <circle r="2" fill="#e05252" opacity="0.6">
+    <animateMotion dur="2s" repeatCount="indefinite" path="M820,210 C820,290 630,290 630,210"/>
+  </circle>
+
+  <!-- ==================== LEGEND ==================== -->
+  <g transform="translate(50, 360)">
+    <rect width="10" height="10" rx="2" fill="#e8f0fe" stroke="#4285f4" stroke-width="1"/>
+    <text x="16" y="10" class="legend-text">Does the work</text>
+
+    <rect x="140" width="10" height="10" rx="2" fill="#fef3e8" stroke="#e8890c" stroke-width="1"/>
+    <text x="156" y="10" class="legend-text">Judges independently</text>
+
+    <line x1="310" y1="5" x2="340" y2="5" stroke="#e05252" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="346" y="10" class="legend-text">Rework loop (fresh context each time)</text>
+
+    <circle cx="590" cy="5" r="3" fill="#4285f4" opacity="0.7"/>
+    <text x="598" y="10" class="legend-text">Flow direction</text>
+  </g>
+</svg>

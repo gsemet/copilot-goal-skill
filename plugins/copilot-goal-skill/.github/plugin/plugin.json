@@ -1,0 +1,34 @@
+{
+  "name": "copilot-goal-skill",
+  "description": "Goal-driven task completion with independent Builder/Inspector verification loop for GitHub Copilot.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Gaetan Semet"
+  },
+  "homepage": "https://github.com/gsemet/copilot-goal-skill",
+  "repository": "https://github.com/gsemet/copilot-goal-skill.git",
+  "license": "MIT",
+  "keywords": [
+    "goal",
+    "autonomous",
+    "verification",
+    "inspector",
+    "builder",
+    "loop",
+    "task",
+    "quality",
+    "independent-review",
+    "orchestrator",
+    "subagent",
+    "copilot"
+  ],
+  "agents": [
+    "./agents"
+  ],
+  "skills": [
+    "./skills/goal"
+  ],
+  "hooks": [],
+  "status": "active",
+  "commands": []
+}

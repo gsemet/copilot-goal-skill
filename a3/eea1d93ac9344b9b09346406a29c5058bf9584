@@ -1,0 +1,28 @@
+.github/plugin/marketplace.json
+  h_0ff60ab6a1d8e8 1-39
+plugins/copilot-goal-skill/.github/plugin/plugin.json
+  h_0ff60ab6a1d8e8 1-34
+plugins/copilot-goal-skill/agents/goal-inspector.agent.md
+  h_0ff60ab6a1d8e8 1-119
+README.md
+  h_0ff60ab6a1d8e8 1-119
+LICENSE
+  h_0ff60ab6a1d8e8 1-21
+plugins/copilot-goal-skill/agents/goal-builder.agent.md
+  h_0ff60ab6a1d8e8 1-97
+plugins/copilot-goal-skill/skills/goal/SKILL.md
+  h_0ff60ab6a1d8e8 1-236
+plugins/copilot-goal-skill/skills/goal/assets/goal-template.md
+  h_0ff60ab6a1d8e8 1-40
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.8",
+  "base_commit_sha": "a3eea1d93ac9344b9b09346406a29c5058bf9584",
+  "prompts": {},
+  "humans": {
+    "h_0ff60ab6a1d8e8": {
+      "author": "Gaetan Semet <gaetan.semet@ampere.cars>"
+    }
+  }
+}

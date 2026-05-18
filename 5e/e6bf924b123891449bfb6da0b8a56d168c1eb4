@@ -1,0 +1,14 @@
+README.md
+  h_0ff60ab6a1d8e8 48-57,76,91,102,104-108,114
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.8",
+  "base_commit_sha": "5ee6bf924b123891449bfb6da0b8a56d168c1eb4",
+  "prompts": {},
+  "humans": {
+    "h_0ff60ab6a1d8e8": {
+      "author": "Gaetan Semet <gaetan.semet@ampere.cars>"
+    }
+  }
+}

@@ -4,12 +4,13 @@ description: >-
   Goal-driven task orchestration with independent verification.
   Interviews the user to define a clear goal, then loops between
   a Builder subagent (does the work) and an Inspector subagent
-  (judges the result with fresh context). The Inspector never
+  (judges the result with fresh context). Output is auditable
+  in git commits from each subagent actions. The Inspector never
   trusts the Builder. Use when the user says "achieve this goal",
   "make this work", "implement until done", or wants verified
   autonomous task completion with independent quality review.
 metadata:
-  author: "Gaetan Semet <gaetan@xeberon.net>
+  author: "Gaetan Semet <gaetan@xeberon.net>"
   recommended-models: [Claude Sonnet 4.6 (copilot)]
 ---
 

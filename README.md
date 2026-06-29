@@ -4,7 +4,32 @@
 between a Builder (does the work) and an Inspector (judges the result)
 until the goal is met.
 
+> [!TIP]
+> You need to enable [Copilot YOLO mode](vscode://settings/chat.tools.global.autoApprove)
+> to use this skill efficiently.
+
 ![Goal Skill Workflow](images/goal-loop.svg)
+
+## Important: Why Not Just Autopilot?
+
+[Autopilot](https://code.visualstudio.com/updates/v1_124#_autopilot-preview) is a similar feature
+directly provided by Copilot. It used to use hardcoded rules to find out if a task is done,
+which was not reliable.
+
+> [!IMPORTANT]
+>
+> Starting [VS Code 1.124](https://code.visualstudio.com/updates/v1_124#_autopilot-preview),
+> **Autopilot CAN be configured to use an utility model to evaluate to completion of the task**,
+> instead of relying on custom rules.
+>
+> For that you need to set [chat.autopilot.advanced.enabled](vscode://settings/chat.autopilot.advanced.enabled)
+> to `true` in your VS Code settings.
+>
+> However, **this skill is not deprecated** by Autopilot if you care about the following:
+>
+> - the `goal.md` is clearly defined, written in your repository
+> - Use a smarter model for inspector (Autopilot uses a small utility model)
+> - Git audit trail (you can see in the history the different review, retry, ...)
 
 ## How It Works
 
@@ -18,19 +43,10 @@ until the goal is met.
    a separate Inspector (different model, fresh context) independently
    verifies against the goal; if FAIL, the Builder gets feedback and
    tries again
-5. **Summary and squash** — when the Inspector says PASS, you get a
+5. **Git commit trail** — each iteration is committed,
+   so you can review the history of coder and inspector decisions
+6. **Summary and squash** — when the Inspector says PASS, you get a
    summary and a ready-to-use squash command
-
-## Why Not Just Autopilot?
-
-Autopilot is convenient. But the same agent that does the work also
-decides when it is finished — like grading your own exam.
-
-This skill separates **doing** from **judging**. The Inspector starts
-with fresh context every iteration, has no memory of implementation
-shortcuts, and is explicitly told to not trust anything. It regularly
-rejects Builder submissions for missing tests, broken edge cases, or
-criteria that were not fully met.
 
 ## Architecture
 

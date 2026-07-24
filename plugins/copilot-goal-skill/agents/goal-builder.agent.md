@@ -5,7 +5,7 @@ description: >-
   Inspector feedback, implements everything needed to achieve
   the goal, runs quality gates, commits, and returns.
 user-invocable: false
-model: Claude Sonnet 4.6 (copilot)
+model: GPT-5.6 Luna (copilot)
 metadata:
   agent-id: b4d1e5a2-9c3f-4b78-8d6e-2f1a0c5b3e7d
 ---
@@ -77,7 +77,7 @@ type(scope): [B] what changed
 
 User-impact description.
 
-Assisted-by: Claude:Sonnet-4.6
+Assisted-by: OpenAI:GPT-5.6 Luna
 ```
 
 - `[B]` marker is mandatory — it identifies this as a Builder commit.

@@ -11,7 +11,7 @@ description: >-
   autonomous task completion with independent quality review.
 metadata:
   author: "Gaetan Semet <gaetan@xeberon.net>"
-  recommended-models: [Claude Sonnet 4.6 (copilot)]
+  recommended-models: [GPT-5.6 Luna (copilot)]
 ---
 
 # Goal — Verified Autonomous Task Completion
@@ -24,8 +24,8 @@ Inspector — to achieve a user-defined goal with independent verification.
 
 | Role | Agent Name | Model | Purpose |
 |------|-----------|-------|---------|
-| Builder | `Goal: Builder` | Claude Sonnet 4.6 | Does the work |
-| Inspector | `Goal: Inspector` | Claude Haiku 4.5 | Judges the result |
+| Builder | `Goal: Builder` | GPT-5.6 Luna | Does the work |
+| Inspector | `Goal: Inspector` | GPT 5.6 Sol | Judges the result |
 
 Builder implements. Inspector verifies with **fresh context**.
 They never share state — only files and git history connect them.
@@ -96,8 +96,8 @@ The Inspector's only reference for what the user wants is this file.
   "goal_id": "<id>",
   "status": "building",
   "iteration": 1,
-  "builder_model": "Claude:Sonnet-4.6",
-  "inspector_model": "Claude:Haiku-4.5",
+  "builder_model": "GPT:5.6-Luna",
+  "inspector_model": "GPT:5.6-Sol",
   "initial_sha": "<git rev-parse HEAD>",
   "created_at": "<ISO 8601>",
   "history": []
@@ -198,9 +198,9 @@ When the Inspector returns **PASS**:
    git reset --soft <initial_sha>
    git commit -m '<type>(<scope>): <goal summary>
 
-   <user-impact description — what the user can now do differently>
+    <user-impact description — what the user can now do differently>
 
-   Assisted-by: Claude:Sonnet-4.6'
+    Assisted-by: OpenAI:GPT-5.6 Luna'
    ```
 
    - Title ≤72 characters. Type is inferred from the goal:
@@ -236,8 +236,8 @@ The Inspector always uses `chore` — its commits are process artefacts
    - Builder: all implementation changes in one commit at end of run
    - Inspector: `inspector-feedback-<N>.md` + `status.json` in one commit
 5. **Trailer**: `Assisted-by: <PROVIDER>:<MODEL>`
-   - Builder: `Assisted-by: Claude:Sonnet-4.6`
-   - Inspector: `Assisted-by: Claude:Haiku-4.5`
+    - Builder: `Assisted-by: OpenAI:GPT-5.6 Luna`
+    - Inspector: `Assisted-by: OpenAI:GPT-5.6 Sol`
 6. **Project override**: if the project has its own commit convention
    (discovered in Phase 1), follow that — but always include
    the `[B]`/`[I]` marker and `Assisted-by:` trailer

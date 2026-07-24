@@ -145,7 +145,7 @@
       <rect x="570" y="152" width="120" height="56" rx="10"
             fill="#e8f0fe" stroke="#4285f4" stroke-width="2"/>
       <text x="630" y="174" class="node-label" fill="#1a56db">Builder</text>
-      <text x="630" y="194" class="node-sublabel">Sonnet 4.6</text>
+      <text x="630" y="194" class="node-sublabel">GPT 5.6 Luna</text>
     </g>
   </g>
 
@@ -155,7 +155,7 @@
       <rect x="755" y="152" width="130" height="56" rx="10"
             fill="#fef3e8" stroke="#e8890c" stroke-width="2"/>
       <text x="820" y="174" class="node-label" fill="#b45309">Inspector</text>
-      <text x="820" y="194" class="node-sublabel">Haiku 4.5</text>
+      <text x="820" y="194" class="node-sublabel">GPT 5.6 Sol</text>
     </g>
   </g>
 

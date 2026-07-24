@@ -52,12 +52,12 @@ which was not reliable.
 
 | Agent | Model | Role |
 |-------|-------|------|
-| **Builder** | Claude Sonnet 4.6 | Implements the goal |
-| **Inspector** | Claude Haiku 4.5 | Verifies independently |
+| **Builder** | GPT-5.6 Luna | Implements the goal |
+| **Inspector** | GPT 5.6 Sol | Verifies independently |
 
-The Inspector runs on a smaller, cheaper model by design — it forces
-clear, verifiable acceptance criteria. If the Inspector can't tell
-whether the goal is met, the goal was poorly defined.
+The Inspector runs on a separate model with fresh context by design —
+it forces clear, verifiable acceptance criteria. If the Inspector
+can't tell whether the goal is met, the goal was poorly defined.
 
 ## Installation
 
@@ -137,8 +137,8 @@ copilot-goal-skill/
 
 | Setting | Default | Notes |
 |---------|---------|-------|
-| Builder model | Claude Sonnet 4.6 | In `goal-builder.agent.md` |
-| Inspector model | Claude Haiku 4.5 | Smaller model by design |
+| Builder model | GPT-5.6 Luna | In `goal-builder.agent.md` |
+| Inspector model | GPT 5.6 Sol | Independent verification model |
 | Iteration limit | None | Soft warning at 5 |
 | Commit convention | Conventional commits | Overridden by project's own |
 

@@ -1,7 +1,7 @@
 {
   "name": "copilot-goal-skill",
   "description": "Goal-driven task completion with independent Builder/Inspector verification loop for GitHub Copilot.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": {
     "name": "Gaetan Semet"
   },

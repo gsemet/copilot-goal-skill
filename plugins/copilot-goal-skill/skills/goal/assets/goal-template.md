@@ -31,7 +31,7 @@ can understand the objective.>
 
 **Commit convention:**
 - <discovered convention or "conventional commits (default)">
-- Assisted-by trailer required: `Assisted-by: Claude:Sonnet-4.6`
+- Assisted-by trailer required: `Assisted-by: GPT:5.6-Luna`
 
 **Guidelines:**
 - <path to relevant guideline files, if any>

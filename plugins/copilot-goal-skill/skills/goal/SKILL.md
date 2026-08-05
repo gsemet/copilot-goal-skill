@@ -11,7 +11,7 @@ description: >-
   autonomous task completion with independent quality review.
 metadata:
   author: "Gaetan Semet <gaetan@xeberon.net>"
-  recommended-models: [GPT-5.6 Luna (copilot)]
+  recommended-models: GPT-5.6 Luna (copilot)
 ---
 
 # Goal — Verified Autonomous Task Completion

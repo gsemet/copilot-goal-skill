@@ -1,0 +1,37 @@
+workspace/*
+!workspace/.gitkeep
+
+# Python
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.coverage
+.hypothesis/
+
+# UV
+.uv/
+
+# IDE
+.vscode/*
+!.vscode/settings.json
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Node/Marketplace
+node_modules/
+npm-debug.log*
+yarn.lock

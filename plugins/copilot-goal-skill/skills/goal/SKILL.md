@@ -11,7 +11,7 @@ description: >-
   autonomous task completion with independent quality review.
 metadata:
   author: "Gaetan Semet <gaetan@xeberon.net>"
-  recommended-models: GPT-5.6 Luna (copilot)
+  recommended-models: ["GPT-5.6 Luna (copilot)"]
 ---
 
 # Goal — Verified Autonomous Task Completion
@@ -24,8 +24,8 @@ Inspector — to achieve a user-defined goal with independent verification.
 
 | Role | Agent Name | Model | Purpose |
 |------|-----------|-------|---------|
-| Builder | `Goal: Builder` | GPT-5.6 Luna | Does the work |
-| Inspector | `Goal: Inspector` | GPT 5.6 Sol | Judges the result |
+| Builder | `Goal: Builder` | GPT-5.6 Luna (copilot) | Does the work |
+| Inspector | `Goal: Inspector` | GPT-6.1 Sol (copilot) | Judges the result |
 
 Builder implements. Inspector verifies with **fresh context**.
 They never share state — only files and git history connect them.
@@ -97,7 +97,7 @@ The Inspector's only reference for what the user wants is this file.
   "status": "building",
   "iteration": 1,
   "builder_model": "GPT:5.6-Luna",
-  "inspector_model": "GPT:5.6-Sol",
+  "inspector_model": "GPT:6.1-Sol",
   "initial_sha": "<git rev-parse HEAD>",
   "created_at": "<ISO 8601>",
   "history": []
@@ -237,7 +237,7 @@ The Inspector always uses `chore` — its commits are process artefacts
    - Inspector: `inspector-feedback-<N>.md` + `status.json` in one commit
 5. **Trailer**: `Assisted-by: <PROVIDER>:<MODEL>`
     - Builder: `Assisted-by: OpenAI:GPT-5.6 Luna`
-    - Inspector: `Assisted-by: OpenAI:GPT-5.6 Sol`
+    - Inspector: `Assisted-by: OpenAI:GPT-6.1 Sol`
 6. **Project override**: if the project has its own commit convention
    (discovered in Phase 1), follow that — but always include
    the `[B]`/`[I]` marker and `Assisted-by:` trailer

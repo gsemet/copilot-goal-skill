@@ -6,7 +6,7 @@ description: >-
   runs quality gates, optionally verifies in a browser, and
   writes a PASS or FAIL verdict with detailed feedback.
 user-invocable: false
-model: GPT-5.6 Sol (copilot)
+model: GPT-6.1 Sol (copilot)
 metadata:
   agent-id: c9e2f1d3-7a4b-4c56-9e8f-3d2b1a0e5c4f
 ---
@@ -110,7 +110,7 @@ git add .goals/<id>/inspector-feedback-<N>.md
 git add .goals/<id>/status.json
 git commit -m "chore(scope): [I] inspector feedback iteration <N>
 
-Assisted-by: OpenAI:GPT-5.6 Sol"
+Assisted-by: OpenAI:GPT-6.1 Sol"
 ```
 
 ### Step 7 — Return verdict

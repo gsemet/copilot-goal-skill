@@ -1,0 +1,100 @@
+# EditorConfig helps developers define and maintain consistent
+# coding styles between different editors and IDEs
+# https://editorconfig.org
+
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_size = 2
+indent_style = space
+insert_final_newline = true
+max_line_length = 120
+trim_trailing_whitespace = true
+
+[.gitattributes]
+indent_style = space
+indent_size = 2
+
+# Shell
+[*.sh]
+indent_size = 4
+indent_style = space
+
+# Python
+[*.py]
+indent_style = space
+indent_size = 4
+
+# Java
+[*.{java}]
+max_line_length = 100
+indent_style = space
+indent_size = 4
+
+# Markdown
+[*.{md,rst,txt}]
+indent_style = space
+indent_size = 2
+trim_trailing_whitespace = false
+
+[*.{ini,toml}]
+indent_style = space
+indent_size = 4
+
+[*Dockerfile]
+indent_style = space
+indent_size = 4
+
+[*.js]
+indent_style = space
+indent_size = 2
+
+[*.{json,yml,yaml}]
+indent_style = space
+indent_size = 2
+
+[*.{html,css,html.j2,md.j2,yml.j2}]
+indent_style = space
+indent_size = 2
+
+# XML
+[*.{*xml}]
+max_line_length = off
+indent_style = space
+indent_size = 2
+
+# FIDL
+[*.{fidl}]
+max_line_length = 120
+indent_style = space
+indent_size = 4
+
+# rnidl
+[*.{rnidl}]
+max_line_length = 120
+indent_style = space
+indent_size = 4
+
+# Makefile
+[Makefile]
+indent_style = tab
+indent_size = 4
+
+# Justfile
+[{*.just,[jJ]ustfile,.[jJ]ustfile}]
+indent_size = 4
+indent_style = space
+
+# CMake files
+[{CMakeLists.txt,*.cmake}]
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 4
+
+# *rc config files
+[.*rc]
+max_line_length = 100
+indent_style = space
+indent_size = 2

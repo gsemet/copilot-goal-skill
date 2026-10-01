@@ -50,10 +50,12 @@ which was not reliable.
 
 ## Architecture
 
-| Agent | Model | Role |
-|-------|-------|------|
-| **Builder** | GPT-5.6 Luna | Implements the goal |
-| **Inspector** | GPT 5.6 Sol | Verifies independently |
+Run the Goal skill with **GPT-6 Luna (copilot)**. The default subagent models are:
+
+| Agent         | Model                  | Role                   |
+| ------------- | ---------------------- | ---------------------- |
+| **Builder**   | GPT-5.6 Luna (copilot) | Implements the goal    |
+| **Inspector** | GPT-6.1 Sol (copilot)  | Verifies independently |
 
 The Inspector runs on a separate model with fresh context by design —
 it forces clear, verifiable acceptance criteria. If the Inspector
@@ -100,6 +102,11 @@ The skill will:
 3. Start the Builder → Inspector loop
 4. Show a summary and squash command when done
 
+## Skill documentation
+
+Read [`docs/goal.md`](docs/goal.md) for an explanation of the workflow, its
+artifacts, verification boundaries, and the value it brings to users.
+
 ## File Structure
 
 When the skill runs, it creates in your project:
@@ -137,8 +144,9 @@ copilot-goal-skill/
 
 | Setting | Default | Notes |
 |---------|---------|-------|
-| Builder model | GPT-5.6 Luna | In `goal-builder.agent.md` |
-| Inspector model | GPT 5.6 Sol | Independent verification model |
+| Skill model | GPT-6 Luna (copilot) | Recommended orchestrator model |
+| Builder model | GPT-5.6 Luna (copilot) | In `goal-builder.agent.md` |
+| Inspector model | GPT-6.1 Sol (copilot) | Independent verification model |
 | Iteration limit | None | Soft warning at 5 |
 | Commit convention | Conventional commits | Overridden by project's own |
 
